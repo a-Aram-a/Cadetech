@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Good Times';
+    src: url('/themes/custom/cadetech_theme/assets/fonts/GoodTimesC.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Seldom Scene';
+    src: url('/themes/custom/cadetech_theme/assets/fonts/SeldomScene.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Barnaul Grotesk';
+    src: url('/themes/custom/cadetech_theme/assets/fonts/BarnaulGrotesk-Reg.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Barnaul Grotesk';
+    font-weight: bold;
+    src: url('/themes/custom/cadetech_theme/assets/fonts/BarnaulGroteskBold-Reg.woff') format('woff');
+}

@@ -1,0 +1,37 @@
+version: '3'
+services:
+
+  drupal:
+    image: drupal:10.1.5
+    container_name: drupal
+    depends_on:
+      - db
+    volumes:
+      - ./drupal/themes:/var/www/html/themes
+      - ./drupal/modules:/var/www/html/modules
+      - ./drupal/profiles:/var/www/html/profiles
+      - ./drupal/sites:/var/www/html/sites
+    networks:
+      - my-net
+
+  db:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - my-net
+
+volumes:
+  db_data:
+
+networks:
+  my-net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.driver.mtu: 1400
