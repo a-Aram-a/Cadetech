@@ -176,6 +176,20 @@ button {
     display: none;
 }
 
+#toolbar-item-administration-tray {
+    color: black;
+}
+
+
+h1.page-title {
+    @extend .text-heading-1;
+    color: var(--text-color-dark);
+}
+
+.block__title {
+    @extend .text-heading-2;
+    color: var(--text-color-dark);
+}
 // <--- common styles
 
 
@@ -258,7 +272,7 @@ button {
     grid-area: region-search;
 }
 
-#block-cadetech-theme-mainmenu ul {
+#block-cadetech-theme-mainmenu ul:not(.contextual-links) {
     display: flex;
     gap: 40px;
     row-gap: 16px;
@@ -280,6 +294,12 @@ button {
     position: relative;
     white-space: nowrap;
 }
+
+
+.contextual-links {
+    color: black;
+}
+
 
 #block-cadetech-theme-mainmenu a:hover {
     text-decoration: underline;
@@ -676,6 +696,66 @@ section.main {
     }
 }
 // <--- main front page
+
+
+
+// partners page --->
+.partners-page__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 30px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.partners-page__content p {
+    margin-bottom: 20px;
+}
+
+.partners-page__image {
+    flex-shrink: 0;
+
+    @media (max-width: 1280px) {
+        max-width: 350px;
+    }
+}
+
+.partners-page__partner::after {
+    display: block;
+    content: "";
+    width: 200px;
+    height: 2px;
+    background-color: var(--background-color-dark);
+    margin-top: 35px
+}
+
+.block-views-blockklyuchevye-postavschiki-block-1 {
+    margin-bottom: 40px;
+}
+.block-views-blockklyuchevye-postavschiki-block-1 .view-content {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+
+    @media (max-width: 640px) {
+        justify-content: space-between;
+    }
+
+    .views-row {
+        flex-basis: 200px;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+}
+
+// <--- partners page
+
+
 
 // footer --->
 .footer {

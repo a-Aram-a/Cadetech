@@ -30,30 +30,30 @@
   color: var(--primary-color);
 }
 
-.text-heading-1 {
+.text-heading-1, h1.page-title {
   font-size: 48px;
 }
 @media (max-width: 1024px) {
-  .text-heading-1 {
+  .text-heading-1, h1.page-title {
     font-size: 32px;
   }
 }
 @media (max-width: 640px) {
-  .text-heading-1 {
+  .text-heading-1, h1.page-title {
     font-size: 24px;
   }
 }
 
-.text-heading-2, .front-header-features-2__title, .front-header-company__title, .isafe-banner p {
+.text-heading-2, .front-header-features-2__title, .front-header-company__title, .isafe-banner p, .block__title {
   font-size: 30px;
 }
 @media (max-width: 1024px) {
-  .text-heading-2, .front-header-features-2__title, .front-header-company__title, .isafe-banner p {
+  .text-heading-2, .front-header-features-2__title, .front-header-company__title, .isafe-banner p, .block__title {
     font-size: 24px;
   }
 }
 @media (max-width: 640px) {
-  .text-heading-2, .front-header-features-2__title, .front-header-company__title, .isafe-banner p {
+  .text-heading-2, .front-header-features-2__title, .front-header-company__title, .isafe-banner p, .block__title {
     font-size: 18px;
   }
 }
@@ -180,6 +180,18 @@ button {
   display: none;
 }
 
+#toolbar-item-administration-tray {
+  color: black;
+}
+
+h1.page-title {
+  color: var(--text-color-dark);
+}
+
+.block__title {
+  color: var(--text-color-dark);
+}
+
 .common-button--light {
   border: 3px solid var(--text-color-light);
   border-radius: 40px;
@@ -249,7 +261,7 @@ button {
   grid-area: region-search;
 }
 
-#block-cadetech-theme-mainmenu ul {
+#block-cadetech-theme-mainmenu ul:not(.contextual-links) {
   display: flex;
   gap: 40px;
   row-gap: 16px;
@@ -259,7 +271,7 @@ button {
   flex-wrap: wrap;
 }
 @media (max-width: 1400px) {
-  #block-cadetech-theme-mainmenu ul {
+  #block-cadetech-theme-mainmenu ul:not(.contextual-links) {
     max-width: 470px;
   }
 }
@@ -270,6 +282,10 @@ button {
   line-height: normal;
   position: relative;
   white-space: nowrap;
+}
+
+.contextual-links {
+  color: black;
 }
 
 #block-cadetech-theme-mainmenu a:hover {
@@ -642,6 +658,62 @@ section.main {
   .front-team__footer img {
     max-width: 200px;
   }
+}
+
+.partners-page__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .partners-page__content {
+    flex-direction: column;
+  }
+}
+
+.partners-page__content p {
+  margin-bottom: 20px;
+}
+
+.partners-page__image {
+  flex-shrink: 0;
+}
+@media (max-width: 1280px) {
+  .partners-page__image {
+    max-width: 350px;
+  }
+}
+
+.partners-page__partner::after {
+  display: block;
+  content: "";
+  width: 200px;
+  height: 2px;
+  background-color: var(--background-color-dark);
+  margin-top: 35px;
+}
+
+.block-views-blockklyuchevye-postavschiki-block-1 {
+  margin-bottom: 40px;
+}
+
+.block-views-blockklyuchevye-postavschiki-block-1 .view-content {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-around;
+}
+@media (max-width: 640px) {
+  .block-views-blockklyuchevye-postavschiki-block-1 .view-content {
+    justify-content: space-between;
+  }
+}
+.block-views-blockklyuchevye-postavschiki-block-1 .view-content .views-row {
+  flex-basis: 200px;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .footer {
