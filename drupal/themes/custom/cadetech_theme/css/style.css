@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("/themes/custom/cadetech_theme/assets/fonts/fonts.css");
 :root {
   --primary-color: #3FA9F5;
@@ -44,16 +45,16 @@
   }
 }
 
-.text-heading-2, .front-header-features-2__title, .front-header-company__title, .isafe-banner p, .block__title {
+.text-heading-2, .view-napravleniya-deyatelnosti .views-field-title, .front-header-features-2__title, .front-header-company__title, .isafe-banner p, .block__title {
   font-size: 30px;
 }
 @media (max-width: 1024px) {
-  .text-heading-2, .front-header-features-2__title, .front-header-company__title, .isafe-banner p, .block__title {
+  .text-heading-2, .view-napravleniya-deyatelnosti .views-field-title, .front-header-features-2__title, .front-header-company__title, .isafe-banner p, .block__title {
     font-size: 24px;
   }
 }
 @media (max-width: 640px) {
-  .text-heading-2, .front-header-features-2__title, .front-header-company__title, .isafe-banner p, .block__title {
+  .text-heading-2, .view-napravleniya-deyatelnosti .views-field-title, .front-header-features-2__title, .front-header-company__title, .isafe-banner p, .block__title {
     font-size: 18px;
   }
 }
@@ -103,16 +104,16 @@
   }
 }
 
-.text-caption-1, .footer-content__copyright, .front-team__member-position, .front-header-features-3__description-list, .front-header-features__feature, .front-header-company__text {
+.text-caption-1, .footer-content__copyright, .view-napravleniya-deyatelnosti .views-field-body::after, .view-napravleniya-deyatelnosti .views-field-field-opisanie-v-vide-punktov::after, .front-team__member-position, .front-header-features-3__description-list, .front-header-features__feature, .front-header-company__text {
   font-size: 20px;
 }
 @media (max-width: 1024px) {
-  .text-caption-1, .footer-content__copyright, .front-team__member-position, .front-header-features-3__description-list, .front-header-features__feature, .front-header-company__text {
+  .text-caption-1, .footer-content__copyright, .view-napravleniya-deyatelnosti .views-field-body::after, .view-napravleniya-deyatelnosti .views-field-field-opisanie-v-vide-punktov::after, .front-team__member-position, .front-header-features-3__description-list, .front-header-features__feature, .front-header-company__text {
     font-size: 16px;
   }
 }
 @media (max-width: 640px) {
-  .text-caption-1, .footer-content__copyright, .front-team__member-position, .front-header-features-3__description-list, .front-header-features__feature, .front-header-company__text {
+  .text-caption-1, .footer-content__copyright, .view-napravleniya-deyatelnosti .views-field-body::after, .view-napravleniya-deyatelnosti .views-field-field-opisanie-v-vide-punktov::after, .front-team__member-position, .front-header-features-3__description-list, .front-header-features__feature, .front-header-company__text {
     font-size: 12px;
   }
 }
@@ -660,6 +661,10 @@ section.main {
   }
 }
 
+.field--name-field-ves-sortirovki {
+  display: none;
+}
+
 .partners-page__content {
   display: flex;
   justify-content: space-between;
@@ -714,6 +719,270 @@ section.main {
   flex-basis: 200px;
   flex-grow: 0;
   flex-shrink: 0;
+}
+
+.view-napravleniya-deyatelnosti {
+  margin-bottom: 40px;
+}
+@media (max-width: 640px) {
+  .view-napravleniya-deyatelnosti {
+    margin-bottom: 20px;
+  }
+}
+
+.view-napravleniya-deyatelnosti .view-content {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+@media (max-width: 640px) {
+  .view-napravleniya-deyatelnosti .view-content {
+    gap: 36px;
+  }
+}
+
+.view-napravleniya-deyatelnosti ul,
+.node--type-proekt ul {
+  margin-left: 0;
+}
+
+.view-napravleniya-deyatelnosti ul li,
+.node--type-proekt ul li {
+  list-style: none;
+  background-image: url(/themes/custom/cadetech_theme/assets/images/icons/mark_icon.png);
+  background-repeat: no-repeat;
+  background-position: 0 5px;
+  background-size: 18px 14px;
+  padding-left: 28px;
+}
+@media (max-width: 640px) {
+  .view-napravleniya-deyatelnosti ul li,
+.node--type-proekt ul li {
+    background-size: 12px 9px;
+    padding-left: 20px;
+  }
+}
+
+.view-napravleniya-deyatelnosti .views-row {
+  display: grid;
+  grid-template-areas: "title image" "description image";
+  grid-template-columns: 1fr 1fr;
+  column-gap: 36px;
+  row-gap: 16px;
+  cursor: pointer;
+}
+@media (max-width: 640px) {
+  .view-napravleniya-deyatelnosti .views-row {
+    grid-template-areas: "title" "image" "description";
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.view-napravleniya-deyatelnosti .views-field-title {
+  font-weight: bold;
+  grid-area: title;
+  pointer-events: none;
+}
+
+.view-napravleniya-deyatelnosti .views-field-field-image {
+  grid-area: image;
+  max-width: 350px;
+  filter: grayscale(1);
+  transition: filter 0.3s ease;
+}
+@media (max-width: 640px) {
+  .view-napravleniya-deyatelnosti .views-field-field-image {
+    max-width: 100%;
+  }
+}
+
+.view-napravleniya-deyatelnosti .views-row:hover .views-field-field-image {
+  filter: grayscale(0);
+}
+
+.view-napravleniya-deyatelnosti .views-field-field-opisanie-v-vide-punktov {
+  grid-area: description;
+}
+
+.view-napravleniya-deyatelnosti .views-field-field-opisanie-v-vide-punktov::after {
+  content: "[нажмите чтобы узнать больше]";
+  font-style: italic;
+}
+
+.view-napravleniya-deyatelnosti .views-field-body {
+  grid-area: description;
+  display: none;
+}
+
+.view-napravleniya-deyatelnosti .views-field-body::after {
+  content: "[нажмите чтобы скрыть описание]";
+  display: block;
+  margin-top: 16px;
+  font-style: italic;
+}
+
+.view-napravleniya-deyatelnosti .views-row.more .views-field-field-opisanie-v-vide-punktov {
+  display: none;
+}
+
+.view-napravleniya-deyatelnosti .views-row.more .views-field-body {
+  display: block;
+  padding-bottom: 16px;
+}
+
+.view-napravleniya-deyatelnosti .views-field-field-opisanie-v-vide-punktov,
+.view-napravleniya-deyatelnosti .views-field-body {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--text-color-dark);
+}
+
+.view-proekty {
+  margin-top: -50px;
+  margin-bottom: 50px;
+}
+@media (max-width: 640px) {
+  .view-proekty {
+    margin-top: -40px;
+    margin-bottom: 30px;
+  }
+}
+
+.view-proekty .view-content {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+@media (max-width: 640px) {
+  .view-proekty .view-content {
+    justify-content: space-around;
+  }
+}
+
+.view-proekty .views-row {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 16px;
+  align-items: center;
+}
+
+.view-proekty .views-field-title:hover + .views-field-field-logo,
+.view-proekty .views-field-field-logo:hover {
+  filter: saturate(5);
+}
+
+.view-proekty .views-field-field-logo {
+  max-width: 60px;
+}
+@media (max-width: 640px) {
+  .view-proekty .views-field-field-logo {
+    max-width: 48px;
+  }
+}
+
+.view-proekty .views-field-title {
+  font-weight: bold;
+  text-align: center;
+  max-width: 250px;
+}
+@media (max-width: 640px) {
+  .view-proekty .views-field-title {
+    max-width: 160px;
+  }
+}
+
+.node--type-proekt p {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.node--type-proekt img {
+  max-width: 930px;
+}
+@media (max-width: 1024px) {
+  .node--type-proekt img {
+    max-width: 100%;
+  }
+}
+
+.node--type-proekt .field--name-field-logo {
+  display: none;
+}
+
+.node--type-proekt .field--name-field-prezentaciya .field__label {
+  display: none;
+}
+
+.node--type-proekt .field--name-field-prezentaciya a::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url(/themes/custom/cadetech_theme/assets/images/icons/pdf.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 16px;
+}
+@media (max-width: 640px) {
+  .node--type-proekt .field--name-field-prezentaciya a::before {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.contacts-page__info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.contacts-page__info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+}
+@media (max-width: 640px) {
+  .contacts-page__info-block {
+    width: 155px;
+  }
+}
+
+.contacts-page__info-block h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.contacts-page__info-block img {
+  max-width: 50px;
+}
+@media (max-width: 640px) {
+  .contacts-page__info-block img {
+    max-width: 40px;
+  }
+}
+
+.contacts-page__job {
+  margin-top: 96px;
+  margin-bottom: 72px;
+}
+@media (max-width: 640px) {
+  .contacts-page__job {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+.contacts-page__map {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 800/600;
 }
 
 .footer {
